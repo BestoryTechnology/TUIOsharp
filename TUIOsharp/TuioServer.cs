@@ -78,11 +78,7 @@ namespace TUIOsharp
             processors.Clear();
         }
 
-        #endregion
-
-        #region Private functions
-
-        private void processMessage(OscMessage message)
+        public void ProcessMessage(OscMessage message)
         {
             if (message.Data.Count == 0) return;
 
@@ -95,6 +91,12 @@ namespace TUIOsharp
 
         #endregion
 
+        #region Private functions
+
+
+
+        #endregion
+
         #region Event handlers
 
         private void handlerOscErrorOccured(object sender, ExceptionEventArgs exceptionEventArgs)
@@ -104,7 +106,7 @@ namespace TUIOsharp
 
         private void handlerOscMessageReceived(object sender, OscMessageReceivedEventArgs oscMessageReceivedEventArgs)
         {
-            processMessage(oscMessageReceivedEventArgs.Message);
+            ProcessMessage(oscMessageReceivedEventArgs.Message);
         }
 
         #endregion
